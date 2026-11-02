@@ -4,8 +4,8 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>About - Balasree Arts Academy</title>
-        <meta name="description" content="Learn about Balasree Arts Academy and our mission" />
+        <title>About - Balasree Tanjore Painting Academy</title>
+        <meta name="description" content="Learn about Balasree Tanjore Painting Academy and our mission" />
       </Head>
 
       {/* Page Header */}
@@ -13,7 +13,7 @@ export default function About() {
         <div className="container">
           <h1 className="text-5xl font-bold mb-4">About Us</h1>
           <p className="text-xl text-gray-300">
-            Discover the story behind Balasree Arts Academy
+            Discover the story behind Balasree Tanjore Painting Academy
           </p>
         </div>
       </section>
@@ -25,7 +25,7 @@ export default function About() {
             <div>
               <h2 className="text-4xl font-bold text-dark-brown mb-6">Our Mission</h2>
               <p className="text-lg text-gray-700 mb-4">
-                Balasree Arts Academy is dedicated to preserving and promoting classical Indian art forms through the creation of exquisite paintings. Our mission is to celebrate the rich cultural heritage of India while providing a platform for talented artists to showcase their work.
+                Balasree Tanjore Painting Academy is dedicated to preserving and promoting classical Indian art forms through the creation of exquisite paintings. Our mission is to celebrate the rich cultural heritage of India while providing a platform for talented artists to showcase their work.
               </p>
               <p className="text-lg text-gray-700 mb-4">
                 We believe in the power of art to transform lives, inspire minds, and connect cultures. Every painting created by our academy carries the essence of tradition, skill, and passion.
@@ -51,7 +51,7 @@ export default function About() {
                 {
                   name: 'Master Artist 1',
                   role: 'Founder & Lead Artist',
-                  bio: 'With over 30 years of experience in classical painting, Master Artist 1 is the visionary behind Balasree Arts Academy.',
+                  bio: 'With over 30 years of experience in classical painting, Master Artist 1 is the visionary behind Balasree Tanjore Painting Academy.',
                 },
                 {
                   name: 'Master Artist 2',

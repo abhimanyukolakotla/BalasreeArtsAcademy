@@ -12,8 +12,8 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <div style={{ fontFamily: lora.style.fontFamily }}>
       <Head>
-        <link rel="icon" href="/BalasreeArtsAcademyLogo.png" type="image/png" />
-        <link rel="shortcut icon" href="/BalasreeArtsAcademyLogo.png" type="image/png" />
+        <link rel="icon" href="/BalasreeTanjorePaintingAcademyLogo.png" type="image/png" />
+        <link rel="shortcut icon" href="/BalasreeTanjorePaintingAcademyLogo.png" type="image/png" />
       </Head>
       <Header />
       <main className="min-h-screen">

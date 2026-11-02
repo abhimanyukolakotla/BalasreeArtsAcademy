@@ -6,8 +6,8 @@ export default function Home() {
     return (
         <>
             <Head>
-                <title>Balasree Arts Academy - Paintings Portfolio</title>
-                <meta name="description" content="Explore beautiful classical paintings by Balasree Arts Academy" />
+                <title>Balasree Tanjore Painting Academy - Paintings Portfolio</title>
+                <meta name="description" content="Explore beautiful classical paintings by Balasree Tanjore Painting Academy" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
             </Head>
 
@@ -18,8 +18,8 @@ export default function Home() {
                         {/* Logo */}
                         <div className="flex justify-center md:justify-start">
                             <Image
-                                src="/BalasreeArtsAcademyLogo.png"
-                                alt="Balasree Arts Academy Logo"
+                                src="/BalasreeTanjorePaintingAcademyLogo.png"
+                                alt="Balasree Tanjore Painting Academy Logo"
                                 width={250}
                                 height={250}
                                 className="rounded-lg shadow-lg"
@@ -29,7 +29,7 @@ export default function Home() {
                         {/* Text Content */}
                         <div>
                             <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                                Welcome to <span className="text-gold">Balasree Arts Academy</span>
+                                Welcome to <span className="text-gold">Balasree Tanjore Painting Academy</span>
                             </h1>
                             <p className="text-xl md:text-2xl text-gray-300 mb-8">
                                 Discover the beauty and elegance of classical paintings by our talented artists

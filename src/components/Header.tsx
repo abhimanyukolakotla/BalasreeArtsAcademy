@@ -12,8 +12,8 @@ export default function Header() {
           {/* Logo - Replace with your actual logo */}
           <div className="w-10 h-10 flex items-center justify-center">
             <Image
-              src="/BalasreeArtsAcademyLogo.png"
-              alt="Balasree Arts Academy Logo"
+              src="/BalasreeTanjorePaintingAcademyLogo.png"
+              alt="Balasree Tanjore Painting Academy Logo"
               width={40}
               height={40}
               className="rounded-full"
@@ -21,7 +21,7 @@ export default function Header() {
             />
           </div>
           <div className="text-xl font-bold hidden sm:block group-hover:text-gold transition-colors">
-            Balasree Arts Academy
+            Balasree Tanjore Painting Academy
           </div>
         </Link>
 

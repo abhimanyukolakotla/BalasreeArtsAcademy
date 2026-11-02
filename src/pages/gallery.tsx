@@ -73,7 +73,7 @@ export default function Gallery() {
   return (
     <>
       <Head>
-        <title>Gallery - Balasree Arts Academy</title>
+        <title>Gallery - Balasree Tanjore Painting Academy</title>
         <meta name="description" content="Browse our collection of classical paintings" />
       </Head>
 

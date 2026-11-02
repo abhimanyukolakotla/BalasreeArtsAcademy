@@ -5,8 +5,8 @@ export default function Contact() {
     return (
         <>
             <Head>
-                <title>Contact Us - Balasree Arts Academy</title>
-                <meta name="description" content="Get in touch with Balasree Arts Academy" />
+                <title>Contact Us - Balasree Tanjore Painting Academy</title>
+                <meta name="description" content="Get in touch with Balasree Tanjore Painting Academy" />
             </Head>
 
             {/* Page Header */}

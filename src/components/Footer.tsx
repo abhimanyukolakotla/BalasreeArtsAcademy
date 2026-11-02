@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* About Section */}
           <div>
-            <h3 className="text-xl font-bold text-gold mb-4">Balasree Arts Academy</h3>
+            <h3 className="text-xl font-bold text-gold mb-4">Balasree Tanjore Painting Academy</h3>
             <p className="text-gray-300 text-sm">
               Dedicated to preserving and promoting classical Indian art forms through quality paintings and education.
             </p>
@@ -88,7 +88,7 @@ export default function Footer() {
         {/* Divider */}
         <div className="border-t border-gray-700 pt-8">
           <p className="text-center text-gray-400 text-sm">
-            &copy; {currentYear} Balasree Arts Academy. All rights reserved.
+            &copy; {currentYear} Balasree Tanjore Painting Academy. All rights reserved.
           </p>
         </div>
       </div>
