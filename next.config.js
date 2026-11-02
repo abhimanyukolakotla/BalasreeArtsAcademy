@@ -2,8 +2,8 @@
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
-  basePath: '/BalasreeArtsAcademy',
-  assetPrefix: '/BalasreeArtsAcademy/',
+  basePath: '',
+  assetPrefix: '',
   images: {
     unoptimized: true,
   },

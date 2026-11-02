@@ -12,7 +12,7 @@ export default function Header() {
           {/* Logo - Replace with your actual logo */}
           <div className="w-10 h-10 flex items-center justify-center">
             <Image
-              src="/BalasreeArtsAcademy/BalasreeArtsAcademyLogo.png"
+              src="/BalasreeArtsAcademyLogo.png"
               alt="Balasree Arts Academy Logo"
               width={40}
               height={40}

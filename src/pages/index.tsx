@@ -18,7 +18,7 @@ export default function Home() {
                         {/* Logo */}
                         <div className="flex justify-center md:justify-start">
                             <Image
-                                src="/BalasreeArtsAcademy/BalasreeArtsAcademyLogo.png"
+                                src="/BalasreeArtsAcademyLogo.png"
                                 alt="Balasree Arts Academy Logo"
                                 width={250}
                                 height={250}
