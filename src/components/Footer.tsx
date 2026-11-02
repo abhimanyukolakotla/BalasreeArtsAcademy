@@ -47,8 +47,15 @@ export default function Footer() {
             <h4 className="text-lg font-bold text-gold mb-4">Contact</h4>
             <ul className="space-y-2 text-sm text-gray-300">
               <li>Email: info@balasreearts.com</li>
-              <li>Phone: +1 (555) 123-4567</li>
-              <li>Location: City, Country</li>
+              <li>Phone: +91 8008118882</li>
+              <li>Plot no 803, <br />
+                  Defence Colony Rd, <br />
+                  SGKS United Residency, <br />
+                  Hill Top Colony, <br />
+                  Sainikpuri, <br />
+                  Secunderabad, <br />
+                  Telangana 500094
+                </li>
             </ul>
           </div>
 
