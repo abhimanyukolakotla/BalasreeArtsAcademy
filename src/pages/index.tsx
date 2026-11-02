@@ -18,10 +18,10 @@ export default function Home() {
                         {/* Logo */}
                         <div className="flex justify-center md:justify-start">
                             <Image
-                                src="/BalasreeArtsAcademyLogo.png"
+                                src="/BalasreeArtsAcademy/BalasreeArtsAcademyLogo.png"
                                 alt="Balasree Arts Academy Logo"
-                                width={500}
-                                height={500}
+                                width={250}
+                                height={250}
                                 className="rounded-lg shadow-lg"
                                 priority
                             />
@@ -35,12 +35,12 @@ export default function Home() {
                                 Discover the beauty and elegance of classical paintings by our talented artists
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4">
-                            <Link href="/gallery" className="btn btn-primary">
-                                View Gallery
-                            </Link>
-                            <Link href="/about" className="btn btn-outline">
-                                Learn More
-                            </Link>
+                                <Link href="/gallery" className="btn btn-primary">
+                                    View Gallery
+                                </Link>
+                                <Link href="/about" className="btn btn-outline">
+                                    Learn More
+                                </Link>
                             </div>
                         </div>
                     </div>
