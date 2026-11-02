@@ -1,0 +1,11 @@
+# Balasree Arts Academy Logo
+
+This folder should contain your logo file.
+
+## Logo Setup
+
+1. Place your logo file here as `logo.png` (or your preferred format)
+2. Recommended size: 40x40 pixels for the header
+3. Supported formats: PNG, JPG, SVG, WebP
+
+The logo will automatically appear in the header navigation once placed in this directory.

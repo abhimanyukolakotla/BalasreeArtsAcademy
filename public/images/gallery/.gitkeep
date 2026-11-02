@@ -1,0 +1,24 @@
+# Gallery Images Directory
+
+Place your painting images in this folder.
+
+## Image Organization
+
+- Use descriptive filenames (e.g., `radha-krishna.jpg`)
+- Recommended format: JPG or WebP for better compression
+- Recommended size: 400x500 pixels or larger
+- Update the `imageUrl` in `src/pages/gallery.tsx` to match your filenames
+
+Example:
+```
+gallery/
+├── radha-krishna.jpg
+├── durga-puja.jpg
+├── village-life.jpg
+└── ...
+```
+
+Then update gallery.tsx:
+```typescript
+imageUrl: '/images/gallery/radha-krishna.jpg'
+```
