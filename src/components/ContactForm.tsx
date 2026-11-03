@@ -12,6 +12,10 @@ export default function ContactForm() {
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  // Get your access key from https://web3forms.com
+  const WEB3FORMS_ACCESS_KEY = '395b676a-60a5-49e2-bd7c-d2033e888ea2';
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -21,18 +25,34 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setError('');
 
     try {
-      // For now, just simulate form submission
-      // In production, you'd send this to an API endpoint
-      console.log('Form submitted:', formData);
-      setSubmitted(true);
-      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          ...formData,
+        }),
+      });
 
-      // Reset success message after 5 seconds
-      setTimeout(() => setSubmitted(false), 5000);
-    } catch (error) {
-      console.error('Error submitting form:', error);
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+
+        // Reset success message after 5 seconds
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        setError('Failed to send message. Please try again.');
+      }
+    } catch (err) {
+      console.error('Error submitting form:', err);
+      setError('An error occurred. Please try again later.');
     } finally {
       setLoading(false);
     }
@@ -43,6 +63,12 @@ export default function ContactForm() {
       {submitted && (
         <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
           Thank you! Your message has been sent successfully. We'll be in touch soon.
+        </div>
+      )}
+
+      {error && (
+        <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+          {error}
         </div>
       )}
 
