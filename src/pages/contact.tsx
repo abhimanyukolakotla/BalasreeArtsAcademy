@@ -43,7 +43,7 @@ export default function Contact() {
                             <div className="mb-8">
                                 <h3 className="text-2xl font-bold text-gold mb-4">Contact Info</h3>
                                 <p className="text-lg text-gray-700 mb-2">
-                                    <strong>Email:</strong> info@balasreearts.com
+                                    <strong>Email:</strong> balasreek@gmail.com
                                 </p>
                                 <p className="text-lg text-gray-700 mb-2">
                                     <strong>Phone:</strong> +91 8008118882

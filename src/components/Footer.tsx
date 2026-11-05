@@ -46,7 +46,7 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-bold text-gold mb-4">Contact</h4>
             <ul className="space-y-2 text-sm text-gray-300">
-              <li>Email: info@balasreearts.com</li>
+              <li>Email: balasreek@gmail.com</li>
               <li>Phone: +91 8008118882</li>
               <li>Plot no 803, <br />
                   Defence Colony Rd, <br />

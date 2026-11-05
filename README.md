@@ -220,7 +220,7 @@ All content and artwork are the property of Balasree Arts Academy.
 
 ## Contact
 
-For inquiries about this website or the academy, visit the Contact page or email us at info@balasreearts.com.
+For inquiries about this website or the academy, visit the Contact page or email us at balasreek@gmail.com.
 
 ---
 
