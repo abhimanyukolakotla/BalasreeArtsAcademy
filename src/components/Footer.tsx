@@ -93,7 +93,7 @@ export default function Footer() {
               &copy; {currentYear} Balasree Tanjore Painting Academy. All rights reserved.
             </p>
 
-            {/* Website by VirrupakshaTech */}
+             &copy;
             <div className="flex items-center gap-2">
               <span className="text-gray-400 text-xs">Website by</span>
               <a 
