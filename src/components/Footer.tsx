@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -87,9 +88,33 @@ export default function Footer() {
 
         {/* Divider */}
         <div className="border-t border-gray-700 pt-8">
-          <p className="text-center text-gray-400 text-sm">
-            &copy; {currentYear} Balasree Tanjore Painting Academy. All rights reserved.
-          </p>
+          <div className="flex flex-col md:flex-row items-center justify-center md:justify-between gap-4 md:gap-6">
+            <p className="text-center text-gray-400 text-sm">
+              &copy; {currentYear} Balasree Tanjore Painting Academy. All rights reserved.
+            </p>
+
+            {/* Website by VirrupakshaTech */}
+            <div className="flex items-center gap-2">
+              <span className="text-gray-400 text-xs">Website by</span>
+              <a 
+                href="" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+              >
+                <Image 
+                  src="/virrupakshatech_logo.jpg" 
+                  alt="VirrupakshaTech Logo"
+                  width={28}
+                  height={28}
+                  className="w-7 h-7"
+                />
+                <span className="text-gold text-xs font-semibold hover:text-white transition-colors">
+                  VirrupakshaTech
+                </span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
