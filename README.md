@@ -103,8 +103,8 @@ Place your logo image in `public/` and update the Header component in `src/compo
 ## Deployment to GitHub Pages
 
 The GitHub Actions workflow in `.github/workflows/pages.yml` builds the static site
-and deploys it whenever `main` is pushed. In repository **Settings → Pages**, set
-the source to **GitHub Actions**.
+and deploys it only when manually requested. Pushing to `main` alone does not
+deploy. In repository **Settings → Pages**, set the source to **GitHub Actions**.
 
 ### Deploying with Copilot
 
@@ -114,18 +114,22 @@ the prompt is submitted, not after the agent's response. The hook stages all
 non-ignored changes, commits them if needed, and pushes the current branch's HEAD
 to `origin/main`. Other prompts do not trigger deployment.
 This includes changes made outside Copilot and existing commits on the branch.
-The push triggers the Pages workflow; deployment completes only if that workflow
-succeeds. The hook runs in any trusted repository using it, including Copilot cloud
-sessions, and requires Node.js, Git credentials, permission to push to `main`,
-and Bash (including on Windows). Restart Copilot after installing the hook.
+After pushing, the hook starts the Pages workflow using GitHub CLI; deployment
+completes only if that workflow succeeds. The hook runs in any trusted repository
+using it, including Copilot cloud sessions, and requires Node.js, Git credentials,
+permission to push to `main`, an authenticated `gh` with permission to run
+workflows, and Bash (including on Windows). Restart Copilot after installing the
+hook.
 
 **Review files before using this automation:** all non-ignored files are committed
 and pushed to the public repository, including untracked files. Environment files
 are ignored, but other secrets may not be; already tracked files are not protected
 by `.gitignore`. The hook never force-pushes: if `main` has advanced or diverged,
 reconcile your branch and retry. A failed push leaves the commit locally for a
-later retry. Branch protection, authentication, or network errors can also prevent
-deployment; check the hook error and GitHub Actions logs.
+later retry. If starting the workflow fails, the push may already have succeeded;
+retry the command after resolving the error. Branch protection, authentication,
+or network errors can also prevent deployment; check the hook error and GitHub
+Actions logs.
 
 ### Hosting under a subdirectory
 
@@ -151,6 +155,7 @@ npm run build
 git add -A
 git commit -m "Deploy to GitHub Pages"
 git push origin main
+gh workflow run pages.yml --ref main
 ```
 
 The site will be available at:

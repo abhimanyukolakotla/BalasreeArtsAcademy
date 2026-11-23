@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-trap 'echo "GitHub Pages auto-deploy failed. Check the Git error above; no force push was attempted." >&2; exit 2' ERR
+trap 'echo "GitHub Pages deployment failed. Check the error above; no force push was attempted." >&2; exit 2' ERR
 
 export GIT_TERMINAL_PROMPT=0
+
+if ! command -v gh >/dev/null; then
+  echo "GitHub CLI (gh) is required to start the Pages workflow." >&2
+  exit 2
+fi
 
 if [[ -n "$(git ls-files -u)" ]]; then
   echo "Resolve Git conflicts before deploying." >&2
@@ -23,6 +28,9 @@ if ! git diff --cached --quiet; then
 fi
 
 if [[ "$(git rev-parse HEAD)" != "$(git rev-parse FETCH_HEAD)" ]]; then
-  echo '{"type":"progress","message":"Pushing changes to main for GitHub Pages deployment."}'
+  echo '{"type":"progress","message":"Pushing changes to main."}'
   git push origin HEAD:refs/heads/main >&2
 fi
+
+echo '{"type":"progress","message":"Starting the GitHub Pages workflow."}'
+gh workflow run pages.yml --ref main >&2
