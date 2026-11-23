@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "hooks": {
+    "userPromptSubmitted": [
+      {
+        "type": "command",
+        "bash": "node .github/hooks/pages-deploy-request.js",
+        "powershell": "node .github/hooks/pages-deploy-request.js",
+        "cwd": ".",
+        "timeoutSec": 120
+      }
+    ]
+  }
+}

@@ -102,18 +102,32 @@ Place your logo image in `public/` and update the Header component in `src/compo
 
 ## Deployment to GitHub Pages
 
-### 1. **Create a GitHub Repository**
+The GitHub Actions workflow in `.github/workflows/pages.yml` builds the static site
+and deploys it whenever `main` is pushed. In repository **Settings → Pages**, set
+the source to **GitHub Actions**.
 
-If you haven't already, create a new repository named `balasree-arts-academy` on GitHub.
+### Deploying with Copilot
 
-### 2. **Configure Repository Settings**
+Send `deploy to github` as the entire prompt to run the repository hook. The
+command is case-insensitive and ignores surrounding whitespace. It runs when
+the prompt is submitted, not after the agent's response. The hook stages all
+non-ignored changes, commits them if needed, and pushes the current branch's HEAD
+to `origin/main`. Other prompts do not trigger deployment.
+This includes changes made outside Copilot and existing commits on the branch.
+The push triggers the Pages workflow; deployment completes only if that workflow
+succeeds. The hook runs in any trusted repository using it, including Copilot cloud
+sessions, and requires Node.js, Git credentials, permission to push to `main`,
+and Bash (including on Windows). Restart Copilot after installing the hook.
 
-- Go to repository **Settings** → **Pages**
-- Select **Deploy from a branch**
-- Select **gh-pages** branch and **/ (root)** folder
-- Save
+**Review files before using this automation:** all non-ignored files are committed
+and pushed to the public repository, including untracked files. Environment files
+are ignored, but other secrets may not be; already tracked files are not protected
+by `.gitignore`. The hook never force-pushes: if `main` has advanced or diverged,
+reconcile your branch and retry. A failed push leaves the commit locally for a
+later retry. Branch protection, authentication, or network errors can also prevent
+deployment; check the hook error and GitHub Actions logs.
 
-### 3. **Update next.config.js** (if using a subdirectory)
+### Hosting under a subdirectory
 
 If your site will be at `username.github.io/balasree-arts-academy`:
 
@@ -130,16 +144,10 @@ const nextConfig = {
 
 For `username.github.io`, remove the `basePath`.
 
-### 4. **Deploy**
+### Manual deployment
 
 ```bash
-# Install gh-pages package (optional)
-npm install --save-dev gh-pages
-
-# Build and deploy
 npm run build
-
-# Commit and push to GitHub
 git add -A
 git commit -m "Deploy to GitHub Pages"
 git push origin main
@@ -204,8 +212,7 @@ The contact form currently logs submissions to the console. For production, inte
 
 **Deployment failures?**
 - Check GitHub Actions logs in repository
-- Ensure `.nojekyll` file exists in the output directory
-- Verify `gh-pages` branch exists
+- Verify Pages uses GitHub Actions as its source and that you can push to `main`
 
 ## Support & Maintenance
 
